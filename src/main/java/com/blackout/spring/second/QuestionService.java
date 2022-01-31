@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.List;
 
 public class QuestionService {
-    private QuestionDAO questionDAO;
+    private final QuestionDAO questionDAO;
 
     public QuestionService(QuestionDAO questionDAO) {
         this.questionDAO = questionDAO;

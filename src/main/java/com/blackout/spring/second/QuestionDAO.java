@@ -9,10 +9,10 @@ import java.util.Scanner;
 
 public class QuestionDAO {
     private Question question;
-    private static LinkedList<Question> list = new LinkedList<>();
-    private static Queue<Question> queue = list;
+    private static LinkedList<Question> list = new LinkedList<>(); //список, в который попадут считанные из файла вопросы.
+    private static Queue<Question> queue = list;  //очередь, из которой удобно доставать по одному вопросу в правильном порядке.
 
-    public QuestionDAO() throws FileNotFoundException{
+    public QuestionDAO() {
     }
 
     public List<Question> readAllQuestions() throws FileNotFoundException {
@@ -28,5 +28,4 @@ public class QuestionDAO {
     public Question readOneQuestion() {
         return queue.poll();
     }
-
 }

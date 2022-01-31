@@ -8,6 +8,9 @@ public class Main {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("/spring-context.xml");
         QuestionService service = context.getBean(QuestionService.class);
         System.out.println(service.getAllQuestions());
+        System.out.println();
+        System.out.println(service.getQuestion());
+        System.out.println(service.getQuestion());
         System.out.println(service.getQuestion());
         context.close();
     }
