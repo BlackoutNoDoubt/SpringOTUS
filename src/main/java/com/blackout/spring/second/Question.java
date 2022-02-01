@@ -2,8 +2,8 @@ package com.blackout.spring.second;
 
 public class Question {
     private static int counter;
-    private int id; //номер вопроса
-    private String question; //непосредственно сам вопрос
+    private final int id; //номер вопроса
+    private final String question; //непосредственно сам вопрос
 
     public Question(String question) {
         this.id = ++counter;

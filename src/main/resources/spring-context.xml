@@ -7,8 +7,20 @@
     <bean id="questionDAO" class="com.blackout.spring.second.QuestionDAO">
     </bean>
 
+    <bean id="answerDAO" class="com.blackout.spring.second.AnswerDAO">
+    </bean>
+
     <bean id="questionService" class="com.blackout.spring.second.QuestionService">
         <constructor-arg name="questionDAO" ref="questionDAO"/>
+    </bean>
+
+    <bean id="answerService" class="com.blackout.spring.second.AnswerService">
+        <constructor-arg name="answerDAO" ref="answerDAO"/>
+    </bean>
+
+    <bean id="generalService" class="com.blackout.spring.second.GeneralService">
+        <constructor-arg name="questionService" ref="questionService"/>
+        <constructor-arg name="answerService" ref="answerService"/>
     </bean>
 
 </beans>

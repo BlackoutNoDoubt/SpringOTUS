@@ -1,11 +1,9 @@
 package com.blackout.spring.second;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-import java.util.Scanner;
 
 public class QuestionDAO {
     private Question question;
@@ -15,16 +13,31 @@ public class QuestionDAO {
     public QuestionDAO() {
     }
 
-    public List<Question> readAllQuestions() throws FileNotFoundException {
-        File file = new File("src/main/resources/questions.csv");
-        Scanner scanner = new Scanner(file);
-        while (scanner.hasNext()) {
-            list.add(new Question(scanner.nextLine()));
+    /**
+     *
+     * @return Возвращает список всех вопросов, считанных из файла.
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
+    public List<Question> readAllQuestions() throws FileNotFoundException, IOException {
+//        File file = new File("src/main/resources/questions.csv");
+//        Scanner reader = new Scanner(file);
+
+        InputStream file = QuestionDAO.class.getResourceAsStream("/questions.csv");
+        BufferedReader reader = new BufferedReader(new InputStreamReader(file));
+        String line;
+
+        while ((line = reader.readLine()) != null) {
+            list.add(new Question(line));
         }
-        scanner.close();
+        reader.close();
         return list;
     }
 
+    /**
+     *
+     * @return Возвращает один считанный из файла вопрос в порядке очереди.
+     */
     public Question readOneQuestion() {
         return queue.poll();
     }

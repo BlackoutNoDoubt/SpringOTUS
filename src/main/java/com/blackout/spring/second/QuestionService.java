@@ -1,6 +1,7 @@
 package com.blackout.spring.second;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 
 public class QuestionService {
@@ -10,10 +11,20 @@ public class QuestionService {
         this.questionDAO = questionDAO;
     }
 
-    public List<Question> getAllQuestions() throws FileNotFoundException {
+    /**
+     *
+     * @return Возвращает все вопросы в том порядке, в котором они записаны в файл.
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
+    public List<Question> getAllQuestions() throws FileNotFoundException, IOException {
         return questionDAO.readAllQuestions();
     }
 
+    /**
+     *
+     * @return Возвращает один вопрос в порядке очереди.
+     */
     public Question getQuestion() {
         return questionDAO.readOneQuestion();
     }
