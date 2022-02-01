@@ -3,7 +3,7 @@ package com.blackout.spring.second;
 import java.io.IOException;
 
 public class AnswerService {
-    private AnswerDAO answerDAO;
+    private final AnswerDAO answerDAO;
 
     public AnswerService (AnswerDAO answerDAO) {
         this.answerDAO = answerDAO;

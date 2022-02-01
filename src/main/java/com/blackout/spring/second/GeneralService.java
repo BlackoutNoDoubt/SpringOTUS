@@ -3,8 +3,8 @@ package com.blackout.spring.second;
 import java.io.IOException;
 
 public class GeneralService {
-    private QuestionService questionService;
-    private AnswerService answerService;
+    private final QuestionService questionService;
+    private final AnswerService answerService;
 
     public GeneralService(QuestionService questionService, AnswerService answerService) {
         this.questionService = questionService;
