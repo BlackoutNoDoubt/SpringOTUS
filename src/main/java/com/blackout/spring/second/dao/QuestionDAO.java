@@ -1,4 +1,6 @@
-package com.blackout.spring.second;
+package com.blackout.spring.second.dao;
+
+import com.blackout.spring.second.domain.Question;
 
 import java.io.*;
 import java.util.LinkedList;

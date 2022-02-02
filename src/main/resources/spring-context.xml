@@ -4,21 +4,21 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="questionDAO" class="com.blackout.spring.second.QuestionDAO">
+    <bean id="questionDAO" class="com.blackout.spring.second.dao.QuestionDAO">
     </bean>
 
-    <bean id="answerDAO" class="com.blackout.spring.second.AnswerDAO">
+    <bean id="answerDAO" class="com.blackout.spring.second.dao.AnswerDAO">
     </bean>
 
-    <bean id="questionService" class="com.blackout.spring.second.QuestionService">
+    <bean id="questionService" class="com.blackout.spring.second.service.QuestionService">
         <constructor-arg name="questionDAO" ref="questionDAO"/>
     </bean>
 
-    <bean id="answerService" class="com.blackout.spring.second.AnswerService">
+    <bean id="answerService" class="com.blackout.spring.second.service.AnswerService">
         <constructor-arg name="answerDAO" ref="answerDAO"/>
     </bean>
 
-    <bean id="generalService" class="com.blackout.spring.second.GeneralService">
+    <bean id="generalService" class="com.blackout.spring.second.service.GeneralService">
         <constructor-arg name="questionService" ref="questionService"/>
         <constructor-arg name="answerService" ref="answerService"/>
     </bean>

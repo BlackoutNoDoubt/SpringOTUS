@@ -1,4 +1,5 @@
 package com.blackout.spring.second;
+import com.blackout.spring.second.service.GeneralService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.FileNotFoundException;

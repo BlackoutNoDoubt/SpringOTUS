@@ -1,4 +1,7 @@
-package com.blackout.spring.second;
+package com.blackout.spring.second.service;
+
+import com.blackout.spring.second.domain.Answer;
+import com.blackout.spring.second.dao.AnswerDAO;
 
 import java.io.IOException;
 

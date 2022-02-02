@@ -1,4 +1,6 @@
-package com.blackout.spring.second;
+package com.blackout.spring.second.dao;
+
+import com.blackout.spring.second.domain.Answer;
 
 import java.io.*;
 import java.util.Scanner;

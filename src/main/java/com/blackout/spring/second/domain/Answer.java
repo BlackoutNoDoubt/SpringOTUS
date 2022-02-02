@@ -1,4 +1,4 @@
-package com.blackout.spring.second;
+package com.blackout.spring.second.domain;
 
 public class Answer {
     private static int counter;
